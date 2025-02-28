@@ -15,3 +15,16 @@ response = requests.get(url, headers={
     "User-Agent": user_agent
 })
 print(response.status_code) #200
+
+class Job:
+    def __init__(self, title, company, region, salary, contract_type, url):
+        self.title = title
+        self.company = company
+        self.region = region
+        self.salary = salary
+        self.contract_type = contract_type
+        self.url = url
+
+soup = BeautifulSoup(response.content, "html.parser")
+jobsboard = soup.find("table", id="jobsboard")
+print(jobsboard)

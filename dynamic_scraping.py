@@ -1,0 +1,1 @@
+# playwright을 이용하기 위해선 real browser가 필요함. 이젠 replit이 아니라 우리 컴퓨터에서 실행해야 함.
