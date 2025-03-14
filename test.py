@@ -28,7 +28,7 @@ with sync_playwright() as p:
     # 스크롤을 끝까지 내려서 모든 데이터를 로딩
     scroll_down(page)
 
-    # ✅ 렌더링된 최종 HTML 가져오기
+    # 렌더링된 최종 HTML 가져오기
     content = page.evaluate("document.documentElement.outerHTML")
 
     browser.close()
@@ -36,7 +36,7 @@ with sync_playwright() as p:
 # BeautifulSoup으로 파싱
 soup = BeautifulSoup(content, "html.parser")
 
-# ✅ HTML 구조를 분석하여 채용 공고 리스트 가져오기
+# HTML 구조를 분석, 채용 공고 리스트 가져오기
 jobs_list = soup.find_all("div", class_="JobCard_container__REty8")
 
 print(f"총 {len(jobs_list)}개의 채용 공고를 가져왔습니다.")
